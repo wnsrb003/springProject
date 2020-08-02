@@ -37,7 +37,7 @@ public class BoardController {
 		
 		service.write(boardVO);
 		
-		return "board/list";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
