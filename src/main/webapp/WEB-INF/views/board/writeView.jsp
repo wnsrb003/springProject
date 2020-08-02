@@ -62,7 +62,7 @@
 								</td>
 							<tr>
 								<td>						
-									<button type="submit">작성</button>
+									<button type="button" class="write_btn">작성</button>
 								</td>
 							</tr>			
 						</tbody>			
