@@ -4,6 +4,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
 <title>게시판</title>
 <style type="text/css">
 li {
@@ -28,7 +33,7 @@ li {
 
 		<section id="container">
 			<form role="form" method="get">
-				<table>
+				<table class="table table-hover">
 					<tr>
 						<th>번호</th>
 						<th>제목</th>
@@ -49,8 +54,9 @@ li {
 
 				</table>
 
-				<div class="search">
-					<select name="searchType">
+				<div class="search row">
+					<div class="col-xs-2 col-sm-2">
+					<select name="searchType" class="form-control">
 						<option value="n"
 							<c:out value="${scri.searchType == null ? 'selected' : ''}"/>>-----</option>
 						<option value="t"
@@ -61,10 +67,18 @@ li {
 							<c:out value="${scri.searchType eq 'w' ? 'selected' : ''}"/>>작성자</option>
 						<option value="tc"
 							<c:out value="${scri.searchType eq 'tc' ? 'selected' : ''}"/>>제목+내용</option>
-					</select> 
-					<input type="text" name="keyword" id="keywordInput"	value="${scri.keyword}" />
-
-					<button id="searchBtn" type="button">검색</button>
+					</select>
+					</div>
+					
+					<div class="col-xs-10 col-sm-10">
+						<div class="input-group">
+							<input type="text" name="keyword" id="keywordInput"	value="${scri.keyword}" class="form-control" />
+							<span class="input-group-btn">
+								<button id="searchBtn" type="button" class="btn btn-default">검색</button>
+							</span>
+						</div>						
+					</div>
+					
 					<script>
 						$(function() {
 							$('#searchBtn')
@@ -84,7 +98,7 @@ li {
 						});
 					</script>
 				</div>
-				
+								
 				
 				<div>
 				<ul>
